@@ -1123,6 +1123,245 @@
 .custom-video-player::-webkit-media-controls-volume-slider {
     filter: invert(1);
 }
+/* Estilos para la nueva sección */
+.technique-list {
+    list-style-type: none;
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.technique-list li {
+    position: relative;
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+}
+
+.technique-list li::before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.subsection-title {
+    color: var(--secondary-color);
+    font-size: 1.8rem;
+    margin: 3rem 0 1.5rem;
+    text-align: center;
+}
+
+.interactive-exercise {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.timer {
+    background: var(--gradient-accent);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    display: inline-block;
+    margin: 1rem 0;
+}
+
+.memory-game {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.game-card {
+    background: var(--light-bg);
+    height: 100px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.game-card.flipped {
+    background: var(--primary-color);
+    color: white;
+}
+/* Modal Eisenhower */
+.eisenhower-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 9999;
+    overflow-y: auto;
+}
+
+.eisenhower-content {
+    background: white;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 15px;
+    position: relative;
+    animation: modalEntrance 0.3s ease;
+}
+
+@keyframes modalEntrance {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.close-eisenhower {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 35px;
+    color: #666;
+    cursor: pointer;
+}
+
+.eisenhower-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.eisenhower-quadrant {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 1rem;
+    min-height: 250px;
+    border-top: 5px solid;
+}
+
+#quadrant1 { border-color: #e74c3c; }
+#quadrant2 { border-color: #2ecc71; }
+#quadrant3 { border-color: #f1c40f; }
+#quadrant4 { border-color: #95a5a6; }
+
+.quadrant-header {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+}
+
+.quadrant-tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.task-item {
+    background: white;
+    padding: 0.8rem;
+    border-radius: 8px;
+    border-left: 4px solid;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.eisenhower-form .grupo-input {
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.eisenhower-form .grupo-input label {
+    display: block;
+    margin-bottom: 0.8rem;
+    color: var(--secondary-color);
+    font-weight: 500;
+    text-align: center;
+}
+
+.eisenhower-form .grupo-input input {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.8rem 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin: 0 auto;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.eisenhower-form .grupo-input input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    outline: none;
+}
+
+.rating-container { 
+    margin-bottom: 1rem;            
+    display: flex;
+    gap: 1rem;
+}
+
+.rating-group {
+    flex: 1;
+}
+
+.rating-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    margin-top: 0.5rem;
+}
+/* Estilos para el botón Clasificar Tarea */
+.eisenhower-form button {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background: var(--gradient);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+    margin: 1.5rem 0;
+    font-size: 1.1rem;
+}
+
+.eisenhower-form button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+    background: var(--gradient-accent);
+}
+
+/* Mejora en los inputs de calificación */
+.rating-group input {
+    background: var(--light-bg);
+    border: 2px solid var(--primary-color) !important;
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+
+/* Ajuste en el contenedor del formulario */
+.eisenhower-form {
+    padding: 1.5rem;
+    background: var(--light-bg);
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
 
     .image-description {
         position: absolute;
@@ -1349,15 +1588,25 @@
         
                 <div class="psychologist-card">
                     <div class="psychologist-img">
-                        <img src="images/Helmer.jpeg" alt="Lucía Ramos">
+                        <img src="images/Cristina.jpeg" alt="Lucía Ramos">
                     </div>
                     <div class="psychologist-info">
-                        <h3>Psic. Helmer Maglorio Aponte Daza</h3>
-                        <span class="specialty">Designado a las Carreras Profesionales de:</span>
-                        <p>Medicina Veterinaria y Zootecnia, Obstetricia, Ciencias Administrativas y Turismo y Hotelería</p>
+                        <h3>Psic. Cristina Vargas Dávila</h3>
+                        <span class="specialty">Designada a la Carrera Profesional de:</span>
+                        <p>Ciencias Contables y Financieras</p>
                     </div>
                 </div>
 
+                <div class="psychologist-card">
+                    <div class="psychologist-img">
+                        <img src="images/Sandy.jpeg" alt="Lucía Ramos">
+                    </div>
+                    <div class="psychologist-info">
+                        <h3>Psic. G. Sandy Marcelo Cárdenas</h3>
+                        <span class="specialty">Designada a las Carrera Profesionales de:</span>
+                        <p>Medicina Humana, Odontología, Ciencias de la Comunicación y Sociología</p>
+                    </div>
+                </div>
                 <div class="psychologist-card">
                     <div class="psychologist-img">
                         <img src="images/Ronald.jpeg" alt="Lucía Ramos">
@@ -1379,54 +1628,95 @@
                         <p>Ingeniería Agroindustrial, Ingeniería Agronómica y Derecho y Ciencias Políticas</p>
                     </div>
                 </div>
-
                 <div class="psychologist-card">
                     <div class="psychologist-img">
-                        <img src="images/Cristina.jpeg" alt="Lucía Ramos">
+                        <img src="images/Helmer.jpeg" alt="Lucía Ramos">
                     </div>
                     <div class="psychologist-info">
-                        <h3>Psic. Cristina Vargas Dávila</h3>
-                        <span class="specialty">Designada a la Carrera Profesional de:</span>
-                        <p>Ciencias Contables y Financieras</p>
+                        <h3>Psic. Helmer Maglorio Aponte Daza</h3>
+                        <span class="specialty">Designado a las Carreras Profesionales de:</span>
+                        <p>Medicina Veterinaria y Zootecnia, Obstetricia, Ciencias Administrativas y Turismo y Hotelería</p>
                     </div>
                 </div>
-
-                <div class="psychologist-card">
-                    <div class="psychologist-img">
-                        <img src="images/Sandy.jpeg" alt="Lucía Ramos">
-                    </div>
-                    <div class="psychologist-info">
-                        <h3>Psic. G. Sandy Marcelo Cárdenas</h3>
-                        <span class="specialty">Designada a las Carrera Profesionales de:</span>
-                        <p>Medicina Humana, Odontología, Ciencias de la Comunicación y Sociología</p>
-                    </div>
-                </div>
-
             </div>
         </section>
+        <section id="tecnicas" class="section fade-in">
+            <h2 class="section-title">Técnicas y Ejercicios para el Estudio</h2>
+            
+            <div class="card-grid">
+                <!-- Tarjeta 1 - Técnicas de Concentración -->
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-icon">🎯</div>
+                        <h3 class="card-title">Técnicas de Concentración</h3>
+                        <ul class="technique-list">
+                            <li>Método Pomodoro (25min trabajo / 5min descanso)</li>
+                            <li>Meditación guiada previa al estudio</li>
+                            <li>Ejercicios de respiración consciente</li>
+                        </ul>
+                        <a href="Documentos/Guia-Concentracion.pdf" download class="doc-download">
+                            Descargar Guía
+                        </a>
+                    </div>
+                </div>
+        
+                <!-- Tarjeta 2 - Organización -->
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-icon">📅</div>
+                        <h3 class="card-title">Planificación Académica</h3>
+                        <ul class="technique-list">
+                            <li>Plantilla de calendario semanal</li>
+                            <li>Método Eisenhower (priorización)</li>
+                            <li>Checklist interactivo descargable</li>
+                        </ul>
+                        <button class="doc-download" onclick="abrirEisenhower()">
+                            Usar Método Eisenhower
+                        </button>
+                    </div>
+                </div>
+        
+                <!-- Tarjeta 3 - Memoria -->
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-icon">🧠</div>
+                        <h3 class="card-title">Refuerzo de Memoria</h3>
+                        <ul class="technique-list">
+                            <li>Ejercicios de asociación mnemotécnica</li>
+                            <li>Mapas mentales interactivos</li>
+                            <li>Técnica Feynman (explicar conceptos)</li>
+                        </ul>
+                        <button class="doc-download" onclick="location.href='#ejercicios-interactivos'">
+                            Practicar Ahora
+                        </button>
+                    </div>
+                </div>
+            </div>
+        
+        </section>
         <section id="inicio" class="section fade-in">
-            <h2 class="section-title">Bienestar y Desarrollo Integral</h2>
+            <h2 class="section-title">Conoce más de la tutoría</h2>
             <div class="card-grid">
                 <div class="card">
                     <div class="card-content">
-                        <div class="card-icon">🔍</div>
-                        <h3 class="card-title">Nuestra Misión</h3>
-                        <p>Brindar servicios de atención psicopedagógica de calidad, proporcionando herramientas para el desarrollo personal, académico y profesional de los estudiantes de la UNHEVAL.</p>
+                        <div class="card-icon">🧘‍♂️</div>
+                        <h3 class="card-title">Dimensión Personal</h3>
+                        <p>Promueve el autoconocimiento, la responsabilidad, el respeto hacia los demás y la adaptación al contexto universitario.</p>
                     </div>
                 </div>
                 
                 <div class="card">
                     <div class="card-content">
-                        <div class="card-icon">🌟</div>
-                        <h3 class="card-title">Nuestra Visión</h3>
-                        <p>Ser una unidad de referencia en servicios psicopedagógicos universitarios, reconocida por su excelencia, innovación y compromiso con el bienestar integral de la comunidad universitaria.</p>
+                        <div class="card-icon">📖</div>
+                        <h3 class="card-title">Dimensión Académica</h3>
+                        <p>Desarrolla competencias técnicas y blandas vinculadas al mercado laboral, como elaboración de currículum, técnicas de entrevista, y conocimiento de oportunidades de prácticas preprofesionales.</p>
                     </div>
                 </div>
                 
                 <div class="card">
                     <div class="card-content">
-                        <div class="card-icon">❤️</div>
-                        <h3 class="card-title">Nuestros Valores</h3>
+                        <div class="card-icon">🎓</div>
+                        <h3 class="card-title">Dimensión Profesional</h3>
                         <p>Empatía, confidencialidad, profesionalismo, compromiso, respeto a la diversidad y ética en nuestros servicios para toda la comunidad universitaria.</p>
                     </div>
                 </div>
@@ -1456,14 +1746,6 @@
                 <div class="card-icon">👥</div>
                 <h3 class="card-title">Talleres Grupales</h3>
                 <p>Espacios de formación en habilidades socioemocionales, liderazgo, trabajo en equipo y manejo del estrés para el desarrollo integral.</p>
-            </div>
-        </div>
-        
-        <div class="card">
-            <div class="card-content">
-                <div class="card-icon">🎯</div>
-                <h3 class="card-title">Orientación Vocacional</h3>
-                <p>Evaluación de intereses, aptitudes y construcción de proyecto de vida profesional para la toma de decisiones académicas.</p>
             </div>
         </div>
     </div>
@@ -1628,49 +1910,6 @@
     </div>
 </section>
 
-<!-- Sección Testimonios -->
-<section id="testimonios" class="testimonials section fade-in">
-    <div class="container">
-        <h2 class="section-title">Testimonios</h2>
-        
-        <div class="testimonial-slider">
-            <div class="testimonial-track">
-                <div class="testimonial-slide">
-                    <div class="testimonial-card">
-                        <img src="images/Psicologia.svg" alt="Testimonio" class="testimonial-img">
-                        <p class="testimonial-quote">El apoyo del servicio de psicopedagogía ha sido fundamental para mi adaptación universitaria. Los talleres de manejo del estrés me ayudaron a equilibrar mis responsabilidades académicas y personales.</p>
-                        <h4 class="testimonial-author">Carmen Rodríguez</h4>
-                        <p class="testimonial-position">Estudiante de Psicología</p>
-                    </div>
-                </div>
-                
-                <div class="testimonial-slide">
-                    <div class="testimonial-card">
-                        <img src="/api/placeholder/100/100" alt="Testimonio" class="testimonial-img">
-                        <p class="testimonial-quote">Gracias a la orientación vocacional pude confirmar mi verdadera pasión y ahora me siento mucho más motivado con mi carrera. El equipo profesional es excepcional y muy comprometido.</p>
-                        <h4 class="testimonial-author">Miguel Sánchez</h4>
-                        <p class="testimonial-position">Estudiante de Ingeniería</p>
-                    </div>
-                </div>
-                
-                <div class="testimonial-slide">
-                    <div class="testimonial-card">
-                        <img src="/api/placeholder/100/100" alt="Testimonio" class="testimonial-img">
-                        <p class="testimonial-quote">Las técnicas de estudio que aprendí en las asesorías académicas transformaron mi rendimiento. Ahora organizo mejor mi tiempo y he mejorado significativamente mis calificaciones.</p>
-                        <h4 class="testimonial-author">Laura Mendoza</h4>
-                        <p class="testimonial-position">Estudiante de Medicina</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="testimonial-nav">
-                <div class="testimonial-dot active"></div>
-                <div class="testimonial-dot"></div>
-                <div class="testimonial-dot"></div>
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- Sección Contacto -->
 <section id="contacto" class="section fade-in">
@@ -1737,7 +1976,59 @@
     </div>
 </section>
 </div>
+<!-- Modal Eisenhower -->
+<div class="eisenhower-modal" id="eisenhowerModal">
+    <div class="eisenhower-content">
+        <span class="close-eisenhower" onclick="cerrarEisenhower()">&times;</span>
+        <h1>Clasificador de Tareas - Método Eisenhower</h1>
+        <div class="explicacion">
+            <h2>¿Cómo funciona?</h2>
+            <p>Califica cada actividad en dos dimensiones:</p>
+            <ul>
+                <li>🔴 <strong>Urgencia:</strong> ¿Requiere acción inmediata? (1 = Puede esperar, 10 = Debe hacerse ya)</li>
+                <li>🟢 <strong>Importancia:</strong> ¿Impacta en tus metas a largo plazo? (1 = Poco relevante, 10 = Crítico)</li>
+            </ul>
+        </div>
+        
+        <div class="eisenhower-form">
+            <div class="grupo-input">
+                <label for="eisenhowerActividad">Nombre de la actividad:</label>
+                <input type="text" id="eisenhowerActividad" placeholder="Ej: Revisar informe mensual">
+            </div>
+            <div class="rating-container">
+                <div class="rating-group">
+                    <label>🔴Urgencia (1-10):</label>
+                    <input type="number" id="eisenhowerUrgencia" min="1" max="10">
+                </div>
+                <div class="rating-group">
+                    <label>🟢Importancia (1-10):</label>
+                    <input type="number" id="eisenhowerImportancia" min="1" max="10">
+                </div>
+            </div>
 
+            <button onclick="agregarActividadEisenhower()">Clasificar Tarea</button>
+        </div>
+
+        <div class="eisenhower-grid">
+            <div class="eisenhower-quadrant" id="quadrant1">
+                <div class="quadrant-header">🟥 Hacer Ahora</div>
+                <div class="quadrant-tasks"></div>
+            </div>
+            <div class="eisenhower-quadrant" id="quadrant2">
+                <div class="quadrant-header">🟩 Programar</div>
+                <div class="quadrant-tasks"></div>
+            </div>
+            <div class="eisenhower-quadrant" id="quadrant3">
+                <div class="quadrant-header">🟨 Delegar</div>
+                <div class="quadrant-tasks"></div>
+            </div>
+            <div class="eisenhower-quadrant" id="quadrant4">
+                <div class="quadrant-header">⬜ Eliminar</div>
+                <div class="quadrant-tasks"></div>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Footer -->
 <footer>
 <div class="footer-container">
@@ -1833,7 +2124,68 @@
 
 <!-- Scripts -->
 <script>
+// Funciones para el modal Eisenhower
+function abrirEisenhower() {
+    document.getElementById('eisenhowerModal').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
 
+function cerrarEisenhower() {
+    document.getElementById('eisenhowerModal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Cerrar al hacer clic fuera del modal
+window.onclick = function(event) {
+    const modal = document.getElementById('eisenhowerModal');
+    if (event.target == modal) {
+        cerrarEisenhower();
+    }
+}
+
+// Clasificador Eisenhower
+function clasificarTarea(urgencia, importancia) {
+    return {
+        quadrant: urgencia >= 7 && importancia >= 7 ? 1 :
+                 urgencia < 7 && importancia >= 7 ? 2 :
+                 urgencia >= 7 && importancia < 7 ? 3 : 4,
+        color: urgencia >= 7 && importancia >= 7 ? '#e74c3c' :
+               urgencia < 7 && importancia >= 7 ? '#2ecc71' :
+               urgencia >= 7 && importancia < 7 ? '#f1c40f' : '#95a5a6'
+    };
+}
+
+function agregarActividadEisenhower() {
+    const actividad = document.getElementById('eisenhowerActividad').value.trim();
+    const urgencia = parseInt(document.getElementById('eisenhowerUrgencia').value);
+    const importancia = parseInt(document.getElementById('eisenhowerImportancia').value);
+
+    if (!actividad || isNaN(urgencia) || isNaN(importancia)) {
+        alert('Por favor complete todos los campos correctamente');
+        return;
+    }
+
+    const clasificacion = clasificarTarea(urgencia, importancia);
+    const quadrant = document.getElementById(`quadrant${clasificacion.quadrant}`).querySelector('.quadrant-tasks');
+    
+    const taskItem = document.createElement('div');
+    taskItem.className = 'task-item';
+    taskItem.style.borderLeftColor = clasificacion.color;
+    taskItem.innerHTML = `
+        <strong>${actividad}</strong>
+        <div class="task-meta">
+            <small>Urgencia: ${urgencia}/10</small>
+            <small>Importancia: ${importancia}/10</small>
+        </div>
+    `;
+
+    quadrant.appendChild(taskItem);
+    
+    // Limpiar formulario
+    document.getElementById('eisenhowerActividad').value = '';
+    document.getElementById('eisenhowerUrgencia').value = '';
+    document.getElementById('eisenhowerImportancia').value = '';
+}
     
 // Imagen ampliada - Versión mejorada
 const modalImage = document.getElementById('modalImage');
